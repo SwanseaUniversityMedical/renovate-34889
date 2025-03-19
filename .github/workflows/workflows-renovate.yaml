@@ -17,3 +17,5 @@ jobs:
       - uses: SwanseaUniversityMedical/workflows/.github/actions/renovate@v1.0.9-renovate-action
         with:
           token: ${{ secrets.RENOVATE_TOKEN }}
+        env:
+          LOG_LEVEL: debug
