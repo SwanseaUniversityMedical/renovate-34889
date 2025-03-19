@@ -19,7 +19,7 @@ jobs:
         with:
           name: "prefix-foobar"
 
-      - uses: SwanseaUniversityMedical/renovate-34889/.github/actions/bizzbuzz@v1.0.0-bizzbuzz-action
+      - uses: SwanseaUniversityMedical/renovate-34889/.github/actions/bizzbuzz@v2.0.0-bizzbuzz-action
         with:
           name: "bizzbuzz"
 
