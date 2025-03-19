@@ -1,0 +1,28 @@
+name: Run Actions
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  run-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: SwanseaUniversityMedical/renovate-34889/.github/actions/foobar@v1.0.0-foobar-action
+        with:
+          name: "foobar"
+
+      - uses: SwanseaUniversityMedical/renovate-34889/.github/actions/foobar@foobar-action-v1.0.0
+        with:
+          name: "prefix-foobar"
+
+      - uses: SwanseaUniversityMedical/renovate-34889/.github/actions/bizzbuzz@v1.0.0-bizzbuzz-action
+        with:
+          name: "bizzbuzz"
+
+      - uses: SwanseaUniversityMedical/renovate-34889/.github/actions/bizzbuzz@bizzbuzz-action-v1.0.0
+        with:
+          name: "prefix-bizzbuzz"
