@@ -10,6 +10,6 @@ runs:
     - name: greeting
       shell: bash
       run: |
-        echo "Hello ${NAME}!" >> "$GITHUB_STEP_SUMMARY"
+        echo "Hello ${NAME}!!!" >> "$GITHUB_STEP_SUMMARY"
       env:
         NAME: "${{ inputs.name }}"
