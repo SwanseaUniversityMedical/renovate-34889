@@ -1,6 +1,6 @@
 module.exports = {
 
-  extends: ["config:base"],
+  extends: ["helpers:pinGitHubActionDigests"],
   configMigration: true,
   semanticCommits: "enabled",
   prHourlyLimit: 0,
