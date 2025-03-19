@@ -28,14 +28,14 @@ concurrency:
 
 jobs:
   foobar-action:
-    uses: SwanseaUniversityMedical/.github/workflows/pr-and-release-repo.yaml@v1.0.3-pr-and-release-repo-action
+    uses: SwanseaUniversityMedical/workflows/.github/workflows/pr-and-release-repo.yaml@v1.0.3-pr-and-release-repo-action
     with:
       job-name: foobar-action
       comment-release: true
       release-tag-format: 'v${version}-foobar-action'
 
   prefixed-foobar-action:
-    uses: SwanseaUniversityMedical/.github/workflows/pr-and-release-repo.yaml@v1.0.3-pr-and-release-repo-action
+    uses: SwanseaUniversityMedical/workflows/.github/workflows/pr-and-release-repo.yaml@v1.0.3-pr-and-release-repo-action
     with:
       job-name: prefixed-foobar-action
       comment-release: true
