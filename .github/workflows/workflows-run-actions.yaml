@@ -11,7 +11,7 @@ jobs:
   run-actions:
     runs-on: ubuntu-latest
     steps:
-      - uses: SwanseaUniversityMedical/renovate-34889/.github/actions/foobar@v1.0.0-foobar-action
+      - uses: SwanseaUniversityMedical/renovate-34889/.github/actions/foobar@v1.1.0-foobar-action
         with:
           name: "foobar"
 
