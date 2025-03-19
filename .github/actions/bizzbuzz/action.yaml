@@ -1,0 +1,15 @@
+name: 'Bizzbuzz'
+inputs:
+  name:
+    description: "Name."
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: greeting
+      shell: bash
+      run: |
+        echo "Hello ${NAME}!" >> "$GITHUB_STEP_SUMMARY"
+      env:
+        NAME: "${{ inputs.name }}"

@@ -1,0 +1,42 @@
+name: Bizzbuzz Action
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    paths:
+      - '.github/workflows/workflows-release-bizzbuzz-action.yaml'
+      - '.github/actions/bizzbuzz/**'
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/workflows-release-bizzbuzz-action.yaml'
+      - '.github/actions/bizzbuzz/**'
+
+permissions:
+  actions: read
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  # Cancel early on pull requests if new commits are added
+  # Don't cancel on release pushes
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  bizzbuzz-action:
+    uses: SwanseaUniversityMedical/workflows/.github/workflows/pr-and-release-repo.yaml@v1.0.3-pr-and-release-repo-action
+    with:
+      job-name: bizzbuzz-action
+      comment-release: true
+      release-tag-format: 'v${version}-bizzbuzz-action'
+
+  prefixed-bizzbuzz-action:
+    uses: SwanseaUniversityMedical/workflows/.github/workflows/pr-and-release-repo.yaml@v1.0.3-pr-and-release-repo-action
+    with:
+      job-name: prefixed-bizzbuzz-action
+      comment-release: true
+      release-tag-format: 'bizzbuzz-action-v${version}'
