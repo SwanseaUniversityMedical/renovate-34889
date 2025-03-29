@@ -41,16 +41,6 @@ The expected output should faithfully preserve the git-tag suffix:
   - uses: my-org/workflows/.github/actions/foobar@abcdefgabcdefg # v1.0.8-foobar-action
 ```
 
-## Additional strange behaviour
-
-I've seen the documentation here https://docs.renovatebot.com/modules/manager/github-actions/#digest-pinning-and-updating
-
-> The GitHub tag is in the format of (prefix-)(v)1.0.0, where prefix and v are optional and 1.0.0 is the version number. Here are the examples of valid GitHub tags: 1.0.1, 1.0, 1, v1.0.1, v1.0, v1, prefix-1.0.1, prefix-1.0, prefix-1, prefix-v1.0.1, prefix-v1.0, prefix-v1.
-
-This implies it would work with a prefixed tag not a suffixed one. However, prefixed tags are not detected at all in the dependency dashboard. As can be seen below `v1.0.0-foobar-action` and `v1.0.0-bizzbuzz-action` are detected but the prefixed tags `foobar-action-v1.0.0` and `bizzbuzz-action-v1.0.0` are not detected.
-
-Since suffixes are valid SemVer and prefixes aren't I feel at the very least suffixes should be supported.
-
 ### Detected dependencies
 
 <details><summary>github-actions</summary>
