@@ -2,6 +2,8 @@
 
 Reproduction for Renovate [discussion 34889](https://github.com/renovatebot/renovate/discussions/34889).
 
+Example renovate log file: https://github.com/SwanseaUniversityMedical/renovate-34889/blob/c3df1d33110939e8da6adecaad596c5d468880a0/SwanseaUniversityMedical_renovate-34889_2025-03-29_21-02_3a11656f-2ab4-4423-b0c7-c13eb8030dc9.log
+
 ## Current behavior
 
 With `helpers:pinGitHubActionDigests` enabled in the config I receive errors when renovate tries to pin suffixed dependencies.
